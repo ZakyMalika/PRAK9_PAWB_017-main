@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- CSS di dalam tag <style> -->
+    <style>
+        /* Reset gaya bawaan browser */
+        body,
+        h1,
+        h3,
+        h5,
+        p,
+        a {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Tampilan utama dan latar belakang */
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        /* Container utama */
+        .container {
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        /* Header selamat datang */
+        .display-4 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Card utama */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #fff;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        /* Card teks */
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* To-Do List Card */
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card a:hover .card-title {
+            color: #28a745;
+        }
+
+        .card-body {
+            text-align: left;
+        }
+
+        /* Flexbox dan posisi */
+        .d-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .col-md-6 {
+            flex: 1;
+            max-width: 48%;
+            min-width: 300px;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+
+            .col-md-6 {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <!-- end -->
+</head>
+
+<body>
+    <main class="container mt-5">
+        <!--  -->
+        <!-- <div>
+            <img src="spider.jpg" alt="">
+            <div>
+                <h1 class="display-4">Welcome Mas/Mbak, <%= user %>
+                </h1>
+                <p class="lead">Atur Semua Deskripsi Harian Anda dengan <strong>To-Do List</strong>.</p>
+            </div>
+        </div> -->
+        <!--  -->
+        <div class="text-center">
+            <h1 class="display-4">Welcome Mas/Mbak, <%= user %>
+            </h1>
+            <p class="lead">Atur Semua Deskripsi Harian Anda dengan <strong>To-Do List</strong>.</p>
+
+            <div class="mt-5 d-flex justify-content-center">
+                <div class="card shadow-lg p-4" style="border-radius: 15px; max-width: 600px;">
+                    <img src="/images/bg-zoom-gdfc.png" class="card-img-top" alt="bg-zoom-gdfc">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="fas fa-home text-primary"></i> Dashboard</h3>
+                        <p class="card-text">Semua Bisa Klen Akses Disini ye. Ayo Atur Semua Dengan Ez!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 d-flex justify-content-center">
+                <div class="row" style="max-width: 800px;">
+                    <div class="col-md-6 mx-auto">
+                        <a href="/todos">
+                            <div class="card">
+                                <img src="/images/todo.png" class="card-img-top" alt="Todos Feature">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-list-check text-success"></i> To-Do List
+                                    </h5>
+                                    <p class="card-text">Kelola semua tugas Anda di halaman To-Do List. Tandai tugas
+                                        yang selesai dan tambahkan tugas baru kapan saja.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <!-- CSS STYLE -->
+    <style>
+        /* Reset gaya bawaan browser */
+        body, h2, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Tampilan latar belakang dan pusat halaman */
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Kontainer untuk login */
+.login-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Judul */
+.login-container h2 {
+    margin-bottom: 1rem;
+    color: #333333;
+    font-size: 1.5rem;
+}
+
+/* Pesan error */
+.error-message {
+    background-color: #ffdddd;
+    color: #d9534f;
+    padding: 0.8rem;
+    border: 1px solid #d9534f;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Input */
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Tombol login */
+.btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Link register */
+.register-link p {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #0056b3;
+}
+
+    </style>
+    <!-- END CSS STYLE -->
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <% if (typeof error !== 'undefined' && error) { %>
+            <div class="error-message">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Masukkan email"
+                >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    placeholder="masukkan password"
+                >
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <div class="register-link">
+            <p style="color: black;">ga punya akun? <a href="/register">daftar here</a></p>
+        </div>
+    </div>
+</body>
+</html>
